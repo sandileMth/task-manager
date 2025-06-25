@@ -1,0 +1,124 @@
+/* src/app/task-list/task-list.component.css */
+.task-list-container {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 30px;
+  margin: 20px auto;
+  width: clamp(300px, 80%, 700px); /* Responsive width */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left; /* Align text within container */
+}
+
+.task-list-container h2 {
+  color: #343a40;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.no-tasks-message {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-list li:hover {
+  background-color: #fcfcfc;
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allows task info to take available space */
+}
+
+.task-info input[type="checkbox"] {
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.task-info .task-name {
+  font-weight: 500;
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.task-info .task-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.task-info .due-date {
+  margin-top: 5px;
+}
+
+/* Priority Badges */
+.priority-high {
+  background-color: #dc3545;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.priority-medium {
+  background-color: #ffc107;
+  color: #343a40;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.priority-low {
+  background-color: #28a745;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Completed task styling */
+.task-list li.completed .task-name {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  margin-left: 15px; /* Spacing from task info */
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}

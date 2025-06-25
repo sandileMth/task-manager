@@ -1,0 +1,72 @@
+/* src/app/task-form/task-form.component.css */
+.task-form-container {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  padding: 30px;
+  margin: 20px auto;
+  width: clamp(300px, 80%, 500px); /* Responsive width */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.task-form-container h2 {
+  color: #343a40;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select {
+  width: calc(100% - 22px); /* Account for padding and border */
+  padding: 12px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1em;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.form-group select {
+  appearance: none; /* Remove default select arrow */
+  background-color: white;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.2-6.4H18.4c-4.8%200-9.4%201.8-13.2%206.4-7.2%207.6-7.2%2019.8%200%2027.4l133.2%20141c3.6%204%208.4%206%2013.2%206s9.6-2%2013.2-6l133.2-141c7.2-7.6%207.2-19.8%200-27.4z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}

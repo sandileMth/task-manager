@@ -1,0 +1,32 @@
+<!-- src/app/task-list/task-list.component.html -->
+<div class="task-list-container">
+  <h2>Your Tasks</h2>
+
+  <!-- *ngIf checks if tasks$ has emitted any tasks and displays content conditionally -->
+  <!-- The 'async' pipe subscribes to the Observable and unwraps its latest value -->
+  <!-- 'let tasks = tasks$ | async' stores the unwrapped array in a local template variable 'tasks' -->
+  <ng-container *ngIf="tasks$ | async as tasks">
+    <p *ngIf="tasks.length === 0" class="no-tasks-message">No tasks yet! Add one from the "Add Task" page.</p>
+
+    <ul class="task-list" *ngIf="tasks.length > 0">
+      <!-- *ngFor iterates over the 'tasks' array -->
+      <li *ngFor="let task of tasks" [ngClass]="{'completed': task.completed}">
+        <div class="task-info">
+            <!-- Event binding to toggle task completion -->
+          <input
+            type="checkbox"
+            [checked]="task.completed"
+            (change)="toggleCompletion(task.id)"  
+          >
+
+          <span class="task-name">{{ task.name }}</span>
+          <span class="task-meta">
+            <span [ngClass]="getPriorityClass(task.priority)">{{ task.priority }} Priority</span>
+            <span class="due-date">Due: {{ task.dueDate || 'N/A' }}</span>
+          </span>
+        </div>
+        <button class="delete-btn" (click)="deleteTask(task.id)">Delete</button>
+      </li>
+    </ul>
+  </ng-container>
+</div>
